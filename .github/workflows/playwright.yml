@@ -1,0 +1,88 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        type: choice
+        options: [qa, staging]
+        default: qa
+      tag:
+        description: 'Tag filter, e.g. @smoke, @lifecycle, @rbac (leave empty for all)'
+        required: false
+        default: ''
+      browser:
+        description: 'Browser project'
+        type: choice
+        options: [chromium, firefox]
+        default: chromium
+
+jobs:
+  test:
+    name: E2E (${{ github.event.inputs.environment || 'qa' }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CI: true
+      TEST_ENV: ${{ github.event.inputs.environment || 'qa' }}
+      BROWSER: ${{ github.event.inputs.browser || 'chromium' }}
+      TAG: ${{ github.event.inputs.tag }}
+      # Optional: override env-file credentials with repository secrets.
+      # ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+      # ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps "$BROWSER"
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Run Playwright tests
+        run: |
+          if [ -n "$TAG" ]; then
+            npx playwright test --project="$BROWSER" --grep "$TAG"
+          else
+            npx playwright test --project="$BROWSER"
+          fi
+
+      - name: Upload HTML report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ env.TEST_ENV }}-${{ env.BROWSER }}
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Upload screenshots, videos and traces
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ env.TEST_ENV }}-${{ env.BROWSER }}
+          path: test-results/
+          retention-days: 14
+
+      - name: Upload JUnit / JSON results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-json-${{ env.TEST_ENV }}-${{ env.BROWSER }}
+          path: reports/
+          retention-days: 14

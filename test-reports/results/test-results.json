@@ -1,0 +1,866 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\amalap\\Downloads\\orangehrm-playwright\\orangehrm-playwright\\playwright.config.ts",
+    "rootDir": "C:/Users/amalap/Downloads/orangehrm-playwright/orangehrm-playwright/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/junit-results.xml"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/amalap/Downloads/orangehrm-playwright/orangehrm-playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "setup",
+        "name": "setup",
+        "testDir": "C:/Users/amalap/Downloads/orangehrm-playwright/orangehrm-playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.setup\\.ts/"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/amalap/Downloads/orangehrm-playwright/orangehrm-playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/amalap/Downloads/orangehrm-playwright/orangehrm-playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/amalap/Downloads/orangehrm-playwright/orangehrm-playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/amalap/Downloads/orangehrm-playwright/orangehrm-playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.48.2",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "setup\\auth.setup.ts",
+      "file": "setup/auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate as admin",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 19992,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "[2026-11-18T05:29:16.247Z] [INFO] Logging in as \"Admin\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T05:29:00.405Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e717b06d8d484d1cd946-1b0acd6caf392142eb6b",
+          "file": "setup/auth.setup.ts",
+          "line": 9,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "auth\\authentication.spec.ts",
+      "file": "auth/authentication.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Authentication",
+          "file": "auth/authentication.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "admin can log in with valid credentials",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression",
+                "smoke",
+                "critical"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 10546,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:29:31.659Z] [INFO] Logging in as \"Admin\"\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:29:24.687Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "62b8d4dbcee4331d62dc-6b5f860491fa5f364aa7",
+              "file": "auth/authentication.spec.ts",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "shows an error for invalid credentials",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression",
+                "negative"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 9107,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:29:31.671Z] [INFO] Logging in as \"Admin\"\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:29:24.747Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "62b8d4dbcee4331d62dc-d1f3c206d97a76145729",
+              "file": "auth/authentication.spec.ts",
+              "line": 20,
+              "column": 7
+            },
+            {
+              "title": "shows required-field validation when submitting empty form",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression",
+                "negative"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 6114,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:29:34.485Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "62b8d4dbcee4331d62dc-5f7ca2e92c8d30ecd8a1",
+              "file": "auth/authentication.spec.ts",
+              "line": 26,
+              "column": 7
+            },
+            {
+              "title": "admin can log out",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 10546,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:29:39.546Z] [INFO] Logging in as \"Admin\"\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:29:35.939Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "62b8d4dbcee4331d62dc-b73530632f8c493a4359",
+              "file": "auth/authentication.spec.ts",
+              "line": 32,
+              "column": 7
+            },
+            {
+              "title": "protected pages redirect unauthenticated users to login",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression",
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 7781,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:29:40.622Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "62b8d4dbcee4331d62dc-a12b5e76e69ae80756f2",
+              "file": "auth/authentication.spec.ts",
+              "line": 38,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "employee\\employee-lifecycle.spec.ts",
+      "file": "employee/employee-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Employee lifecycle",
+          "file": "employee/employee-lifecycle.spec.ts",
+          "line": 13,
+          "column": 15,
+          "specs": [
+            {
+              "title": "admin creates a new employee with login details",
+              "ok": true,
+              "tags": [
+                "lifecycle",
+                "regression",
+                "smoke",
+                "critical"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 18960,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:29:48.277Z] [INFO] Creating employee Mason Bennett5825 (id 78655825)\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:00.325Z] [INFO] Employee created with empNumber 341\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:29:46.567Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "91fc4fa5fba232600bf5-e6f04cf0f7066641e18a",
+              "file": "employee/employee-lifecycle.spec.ts",
+              "line": 19,
+              "column": 7
+            },
+            {
+              "title": "new employee is searchable in the PIM employee list",
+              "ok": true,
+              "tags": [
+                "lifecycle",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 8486,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:30:11.558Z] [INFO] Searching employee list for id 78655825\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:30:05.553Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "91fc4fa5fba232600bf5-c86635a42f7df988daca",
+              "file": "employee/employee-lifecycle.spec.ts",
+              "line": 31,
+              "column": 7
+            },
+            {
+              "title": "new employee logs in with ESS role and restricted access",
+              "ok": true,
+              "tags": [
+                "lifecycle",
+                "regression",
+                "rbac"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 11267,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:30:14.068Z] [INFO] Opening isolated session for user \"qa.user78655825\"\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:20.492Z] [INFO] Logging in as \"qa.user78655825\"\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:30:14.060Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "91fc4fa5fba232600bf5-99adc07d068671993c2d",
+              "file": "employee/employee-lifecycle.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "admin updates the employee personal details",
+              "ok": true,
+              "tags": [
+                "lifecycle",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 14790,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:30:33.616Z] [INFO] Updating personal details: {\"middleName\":\"Updated\",\"lastName\":\"Edited5816\",\"otherId\":\"OID55816\",\"maritalStatus\":\"Single\"}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:30:25.335Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "91fc4fa5fba232600bf5-46e779578f5a491b503a",
+              "file": "employee/employee-lifecycle.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "updated details are reflected in the employee list",
+              "ok": true,
+              "tags": [
+                "lifecycle",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 8644,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:30:45.947Z] [INFO] Searching employee list for id 78655825\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:30:40.206Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "91fc4fa5fba232600bf5-f155b146f4d0be11391b",
+              "file": "employee/employee-lifecycle.spec.ts",
+              "line": 60,
+              "column": 7
+            },
+            {
+              "title": "admin deletes the employee",
+              "ok": true,
+              "tags": [
+                "lifecycle",
+                "regression",
+                "critical"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 13765,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:30:54.940Z] [INFO] Searching employee list for id 78655825\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:57.450Z] [INFO] Deleting employee 78655825\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:58.349Z] [INFO] Searching employee list for id 78655825\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:30:48.903Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "91fc4fa5fba232600bf5-b4324242c5f385cc924d",
+              "file": "employee/employee-lifecycle.spec.ts",
+              "line": 66,
+              "column": 7
+            },
+            {
+              "title": "deleted employee can no longer log in",
+              "ok": true,
+              "tags": [
+                "lifecycle",
+                "regression",
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 8357,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:31:06.826Z] [INFO] Logging in as \"qa.user78655825\"\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:31:02.685Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "91fc4fa5fba232600bf5-58b788dfbe151ea5cdf1",
+              "file": "employee/employee-lifecycle.spec.ts",
+              "line": 76,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "rbac\\role-based-access.spec.ts",
+      "file": "rbac/role-based-access.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Role-based access control",
+          "file": "rbac/role-based-access.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Admin role sees admin and common modules",
+              "ok": true,
+              "tags": [
+                "rbac",
+                "regression",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 9654,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:29:48.465Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "00a3c253adaf9407ff4b-5096377ec562a1291348",
+              "file": "rbac/role-based-access.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "Admin role can open User Management",
+              "ok": true,
+              "tags": [
+                "rbac",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 10832,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:29:58.156Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "00a3c253adaf9407ff4b-7f23e4a819a11de16a5f",
+              "file": "rbac/role-based-access.spec.ts",
+              "line": 12,
+              "column": 7
+            },
+            {
+              "title": "ESS role sees only self-service modules",
+              "ok": true,
+              "tags": [
+                "rbac",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 31704,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:30:10.675Z] [INFO] Creating employee Lucas Price7471 (id 81067471)\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:22.288Z] [INFO] Employee created with empNumber 344\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:22.289Z] [INFO] Opening isolated session for user \"qa.user81067471\"\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:28.239Z] [INFO] Logging in as \"qa.user81067471\"\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:36.082Z] [INFO] Searching employee list for id 81067471\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:37.452Z] [INFO] Deleting employee 81067471\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:30:09.339Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "00a3c253adaf9407ff4b-91ec7a0332bcd4170028",
+              "file": "rbac/role-based-access.spec.ts",
+              "line": 18,
+              "column": 7
+            },
+            {
+              "title": "ESS role cannot reach admin User Management by URL",
+              "ok": true,
+              "tags": [
+                "rbac",
+                "regression",
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 36862,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[2026-11-18T05:30:42.049Z] [INFO] Creating employee Mason Price4980 (id 84204980)\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:54.496Z] [INFO] Employee created with empNumber 346\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:30:54.503Z] [INFO] Opening isolated session for user \"qa.user84204980\"\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:31:07.888Z] [INFO] Logging in as \"qa.user84204980\"\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:31:13.373Z] [INFO] Searching employee list for id 84204980\n"
+                        },
+                        {
+                          "text": "[2026-11-18T05:31:14.526Z] [INFO] Deleting employee 84204980\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-18T05:30:41.110Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "00a3c253adaf9407ff4b-4b8065d3f36c0daa85ac",
+              "file": "rbac/role-based-access.spec.ts",
+              "line": 26,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-18T05:28:58.521Z",
+    "duration": 141307.195,
+    "expected": 17,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,110 @@
+<testsuites id="" name="" tests="17" failures="0" skipped="0" errors="0" time="141.307195">
+<testsuite name="setup\auth.setup.ts" timestamp="2026-11-18T05:28:58.656Z" hostname="setup" tests="1" failures="0" skipped="0" time="19.992" errors="0">
+<testcase name="authenticate as admin" classname="setup\auth.setup.ts" time="19.992">
+<system-out>
+<![CDATA[[2026-11-18T05:29:16.247Z] [INFO] Logging in as "Admin"
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="auth\authentication.spec.ts" timestamp="2026-11-18T05:28:58.656Z" hostname="chromium" tests="5" failures="0" skipped="0" time="44.094" errors="0">
+<testcase name="Authentication › admin can log in with valid credentials" classname="auth\authentication.spec.ts" time="10.546">
+<system-out>
+<![CDATA[[2026-11-18T05:29:31.659Z] [INFO] Logging in as "Admin"
+]]>
+</system-out>
+</testcase>
+<testcase name="Authentication › shows an error for invalid credentials" classname="auth\authentication.spec.ts" time="9.107">
+<system-out>
+<![CDATA[[2026-11-18T05:29:31.671Z] [INFO] Logging in as "Admin"
+]]>
+</system-out>
+</testcase>
+<testcase name="Authentication › shows required-field validation when submitting empty form" classname="auth\authentication.spec.ts" time="6.114">
+</testcase>
+<testcase name="Authentication › admin can log out" classname="auth\authentication.spec.ts" time="10.546">
+<system-out>
+<![CDATA[[2026-11-18T05:29:39.546Z] [INFO] Logging in as "Admin"
+]]>
+</system-out>
+</testcase>
+<testcase name="Authentication › protected pages redirect unauthenticated users to login" classname="auth\authentication.spec.ts" time="7.781">
+</testcase>
+</testsuite>
+<testsuite name="employee\employee-lifecycle.spec.ts" timestamp="2026-11-18T05:28:58.656Z" hostname="chromium" tests="7" failures="0" skipped="0" time="84.269" errors="0">
+<testcase name="Employee lifecycle › admin creates a new employee with login details" classname="employee\employee-lifecycle.spec.ts" time="18.96">
+<system-out>
+<![CDATA[[2026-11-18T05:29:48.277Z] [INFO] Creating employee Mason Bennett5825 (id 78655825)
+[2026-11-18T05:30:00.325Z] [INFO] Employee created with empNumber 341
+]]>
+</system-out>
+</testcase>
+<testcase name="Employee lifecycle › new employee is searchable in the PIM employee list" classname="employee\employee-lifecycle.spec.ts" time="8.486">
+<system-out>
+<![CDATA[[2026-11-18T05:30:11.558Z] [INFO] Searching employee list for id 78655825
+]]>
+</system-out>
+</testcase>
+<testcase name="Employee lifecycle › new employee logs in with ESS role and restricted access" classname="employee\employee-lifecycle.spec.ts" time="11.267">
+<system-out>
+<![CDATA[[2026-11-18T05:30:14.068Z] [INFO] Opening isolated session for user "qa.user78655825"
+[2026-11-18T05:30:20.492Z] [INFO] Logging in as "qa.user78655825"
+]]>
+</system-out>
+</testcase>
+<testcase name="Employee lifecycle › admin updates the employee personal details" classname="employee\employee-lifecycle.spec.ts" time="14.79">
+<system-out>
+<![CDATA[[2026-11-18T05:30:33.616Z] [INFO] Updating personal details: {"middleName":"Updated","lastName":"Edited5816","otherId":"OID55816","maritalStatus":"Single"}
+]]>
+</system-out>
+</testcase>
+<testcase name="Employee lifecycle › updated details are reflected in the employee list" classname="employee\employee-lifecycle.spec.ts" time="8.644">
+<system-out>
+<![CDATA[[2026-11-18T05:30:45.947Z] [INFO] Searching employee list for id 78655825
+]]>
+</system-out>
+</testcase>
+<testcase name="Employee lifecycle › admin deletes the employee" classname="employee\employee-lifecycle.spec.ts" time="13.765">
+<system-out>
+<![CDATA[[2026-11-18T05:30:54.940Z] [INFO] Searching employee list for id 78655825
+[2026-11-18T05:30:57.450Z] [INFO] Deleting employee 78655825
+[2026-11-18T05:30:58.349Z] [INFO] Searching employee list for id 78655825
+]]>
+</system-out>
+</testcase>
+<testcase name="Employee lifecycle › deleted employee can no longer log in" classname="employee\employee-lifecycle.spec.ts" time="8.357">
+<system-out>
+<![CDATA[[2026-11-18T05:31:06.826Z] [INFO] Logging in as "qa.user78655825"
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="rbac\role-based-access.spec.ts" timestamp="2026-11-18T05:28:58.656Z" hostname="chromium" tests="4" failures="0" skipped="0" time="89.052" errors="0">
+<testcase name="Role-based access control › Admin role sees admin and common modules" classname="rbac\role-based-access.spec.ts" time="9.654">
+</testcase>
+<testcase name="Role-based access control › Admin role can open User Management" classname="rbac\role-based-access.spec.ts" time="10.832">
+</testcase>
+<testcase name="Role-based access control › ESS role sees only self-service modules" classname="rbac\role-based-access.spec.ts" time="31.704">
+<system-out>
+<![CDATA[[2026-11-18T05:30:10.675Z] [INFO] Creating employee Lucas Price7471 (id 81067471)
+[2026-11-18T05:30:22.288Z] [INFO] Employee created with empNumber 344
+[2026-11-18T05:30:22.289Z] [INFO] Opening isolated session for user "qa.user81067471"
+[2026-11-18T05:30:28.239Z] [INFO] Logging in as "qa.user81067471"
+[2026-11-18T05:30:36.082Z] [INFO] Searching employee list for id 81067471
+[2026-11-18T05:30:37.452Z] [INFO] Deleting employee 81067471
+]]>
+</system-out>
+</testcase>
+<testcase name="Role-based access control › ESS role cannot reach admin User Management by URL" classname="rbac\role-based-access.spec.ts" time="36.862">
+<system-out>
+<![CDATA[[2026-11-18T05:30:42.049Z] [INFO] Creating employee Mason Price4980 (id 84204980)
+[2026-11-18T05:30:54.496Z] [INFO] Employee created with empNumber 346
+[2026-11-18T05:30:54.503Z] [INFO] Opening isolated session for user "qa.user84204980"
+[2026-11-18T05:31:07.888Z] [INFO] Logging in as "qa.user84204980"
+[2026-11-18T05:31:13.373Z] [INFO] Searching employee list for id 84204980
+[2026-11-18T05:31:14.526Z] [INFO] Deleting employee 84204980
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
